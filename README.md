@@ -84,8 +84,8 @@ class Mustafa_Checkout_Model_Observer
             'version'     => 'latest',
             'region'      => 'us-east-2',
             'credentials' => [
-                'key'    => 'AKIAXTBWCVNNVDOE3Y76',
-                'secret' => '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',
+                'key'    => 'XXXX',
+                'secret' => 'SecretXXX',
             ]]);
 
 
@@ -116,19 +116,21 @@ class Mustafa_Checkout_Model_Observer
         $jsondData = json_encode($dataToSend);
 
 
+        // update your SQS link
+        $queueUrl = "https://sqs.us-east-2.amazonaws.com/XXXXX/sqsName";
 
-        $queueUrl = "https://sqs.us-east-2.amazonaws.com/521951947611/magento_orders";
-
-        // preapare sqs data
+        // preapare sqs data 
+        // update domain.com to your domain
+        // update the api endpoint
         $params = [
             'MessageAttributes' => [
                 "domain" => [
                     'DataType' => "String",
-                    'StringValue' => "3.141.170.231"
+                    'StringValue' => "domain.com"
                 ],
                 "api" => [
                     'DataType' => "String",
-                    'StringValue' => "/api/test.php"
+                    'StringValue' => "/api/"
                 ]
             ],
             'MessageBody'   => $jsondData,
