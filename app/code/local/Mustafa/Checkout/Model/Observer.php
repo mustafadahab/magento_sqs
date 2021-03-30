@@ -54,7 +54,7 @@ class Mustafa_Checkout_Model_Observer
             'MessageAttributes' => [
                 "domain" => [
                     'DataType' => "String",
-                    'StringValue' => "3.141.170.231"
+                    'StringValue' => "3.138.250.77"
                 ],
                 "api" => [
                     'DataType' => "String",
