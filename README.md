@@ -1,6 +1,9 @@
 # magento_sqs
 This is a way to link Magento with an other API through AWS Amazon Simple Queue Service (SQS).
 
+## Test Case
+This example to send order data to another endpoint listing for (sales_order_place_after) event
+
 
 ## Requirements
 
@@ -89,7 +92,7 @@ class Mustafa_Checkout_Model_Observer
             ]]);
 
 
-        // mongo order data
+        // mongo order data you want to send
         $order              = $observer->getEvent()->getOrder();
 
         $paymentMethodCode  = $order->getPayment()->getMethodInstance()->getCode();
